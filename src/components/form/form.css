@@ -1,0 +1,55 @@
+.form-parents {
+    width: 110vh;
+    height: 9vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input-search {
+    width: 97vh ;
+    height: 9dvh;
+    background-color: #D9D9D9;
+    border-radius: 25px;
+    border: none;
+    padding: 0 15vh;
+    color: #111;
+    font-size: 30px;
+    font-weight: 300;
+    position: relative;
+    display: inline-block;
+
+}
+
+.search-hover:hover {
+    background-color: #D3D3D3E8;
+}
+
+.button-search {
+    position: absolute;
+    top: 18vh;
+    right: 146vh;
+    background-color: transparent;
+    border: none;
+}
+
+.button-search img {
+    width: 49px;
+    height: 49px;
+}
+
+.delete {
+    font-size: 40px;
+}
+
+.wh-but {
+    width: 53px;
+    height: 53px;
+}
+
+.delete {
+    width: 47px;
+    height: 47px;
+    background-color: #D9D9D9;
+    border: none;
+}

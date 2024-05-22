@@ -1,0 +1,45 @@
+.table {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
+    width: 100%;
+    height: 50px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: rgb(7, 14, 39);
+    border-bottom: 0.5px solid  rgba(126, 139, 182);
+}
+
+.table span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: 0.3s;
+}
+
+.table-color span {
+    color: rgba(126, 139, 182);
+    gap: 9px;
+}
+
+.blue-span {
+    background-color:rgba(0,89,247) ;
+}
+
+.flag {
+    width: auto;
+    height: 30px;
+    border-radius: 4px ;
+}
+
+span:hover {
+    color: grey;
+}
+
+.loading-div {
+    width: 100%;
+    height: 83.6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

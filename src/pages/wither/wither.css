@@ -1,0 +1,21 @@
+.container {
+    background-color: #252323;
+    min-height: 90.46vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.error-h1 {
+    color: red;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-weight: 800;
+    font-size: 30px;
+}
+
+.e-div {
+    height: 10px;
+}

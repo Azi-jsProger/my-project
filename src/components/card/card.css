@@ -1,0 +1,89 @@
+.color-text {
+    color: white;
+}
+
+.card {
+    width: 115vh;
+    height: 58vh ;
+    background: linear-gradient(112.67deg, #AD36CB 26.16%, #333333 67.37%);
+    border-radius: 32px;
+    padding: 35px 28px;
+
+}
+
+.info-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.loc-data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-h1 {
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.data-h1 {
+    font-size: 15px;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.name img {
+    width: 31px;
+    height: 31px;
+}
+
+.temp {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.temp h1 {
+    font-size: 70px;
+}
+
+.img-temp {
+    width: 3vh;
+    height: 8.9vh;
+}
+
+.img-wither {
+    width: 11vh;
+    height: auto;
+}
+
+.detailed-information {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.detailed-information div h1 {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.detailed-information div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.detailed-information div h2 {
+    font-size: 22px;
+}
