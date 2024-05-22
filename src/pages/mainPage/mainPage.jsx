@@ -24,7 +24,7 @@ const MainPage = () => {
     return (
         <div className="main">
 
-            <Header/>
+            {/*<Header/>*/}
             <video src={videoInfinity} autoPlay muted loop className="bg-video" />
             <div className="content">
                 <ButtonMaterial text='wither' onClick={redirecToWither}/>
