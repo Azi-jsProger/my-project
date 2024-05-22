@@ -4,7 +4,6 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color: #4C75A3;
     gap: 30px;
@@ -72,4 +71,8 @@
     font-weight: 500;
     color: grey;
     margin: 0;
+}
+
+.e-game {
+    height: 57.8vh;
 }

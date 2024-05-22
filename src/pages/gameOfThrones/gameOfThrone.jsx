@@ -10,22 +10,25 @@ const GameOfThrone = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [characters, setCharacters] = useState([]);
     const navigate = useNavigate();
+    const [error, setError] = useState(null)
+
 
     const getCharacter = async () => {
-        setIsLoading(true);
+        setIsLoading(false);
         try {
             const response = await axiosInstance.get('api/v2/Characters');
             setCharacters(response.data);
             showSucsess('Успешно', 'Загружены персонажы');
+            setError(null)
         } catch (e) {
-            if (e.response.status === 400) {
-                console.log('Aziret write error');
-            } else if (e.response.status === 404) {
-                console.log('lirvbnfm');
-            } else if (e.response.status === 500) {
-                console.log('fuygsruhvruoi');
+            if (e?.response?.status === 400) {
+                setError('Неправильный запрос')
+            } else if (e?.response?.status === 404) {
+                setError('Вы не авторизованы')
+            } else if (e?.response?.status === 500) {
+                setError('Internal Server Error');
             } else {
-                console.log('Not information');
+                setError('Not information');
             }
             showError('Ошибка запроса', 'Повторите попытку позже');
         } finally {
@@ -40,7 +43,7 @@ const GameOfThrone = () => {
     return (
         <div className='container-info'>
 
-            <Header />
+            <Header/>
 
             {isLoading ?
                 <div className='loading'>
@@ -71,7 +74,7 @@ const GameOfThrone = () => {
 
                                 <div className='photo'>
                                     <img
-                                        src={item.imageUrl} />
+                                        src={item.imageUrl}/>
                                 </div>
                             </div>
                         ))}
@@ -79,6 +82,11 @@ const GameOfThrone = () => {
                 </div>
 
             }
+
+            <div className="e-game">
+                {error && <h1 className='error-h1'>{error}</h1>}
+            </div>
+
         </div>
     );
 };

@@ -20,14 +20,15 @@ const Currency = () => {
             const filteredCurrent = response.data.filter(item => item.id < 20);
             setCurrencyData(filteredCurrent);
             showSucsess('Успешно', 'Курсы валют загружены');
+            setError(null)
         } catch (e) {
-            if (e.response.status === 400) {
+            if (e?.response?.status === 400) {
                 setError('Неправильный запрос')
-            } else if (e.response.status === 401) {
+            } else if (e?.response?.status === 401) {
                 setError('Вы не авторизованы')
-            } else if (e.response.status === 403) {
+            } else if (e?.response?.status === 403) {
                 setError('Нет прав на просмотр')
-            } else if (e.response.status === 404) {
+            } else if (e?.response?.status === 404) {
                 setError('Связь с сервером установлена, но данных по заданному запросу на сервере нет')
             } else {
                 setError('server is temporarily unavailable')
@@ -116,7 +117,7 @@ const Currency = () => {
                     ))
                 }
 
-                <div className="e-div">
+                <div className="e-current">
                     {error && <h1 className='error-h1'>{error}</h1>}
                 </div>
 
