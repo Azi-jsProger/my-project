@@ -11,6 +11,7 @@ import Loading from "../../components/loading/loading";
 const Currency = () => {
     const [currencyData, setCurrencyData] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
+    const [error, setError] = useState(null)
 
     const getCurrency = async () => {
         setIsLoading(true)
@@ -20,6 +21,17 @@ const Currency = () => {
             setCurrencyData(filteredCurrent);
             showSucsess('Успешно', 'Курсы валют загружены');
         } catch (e) {
+            if (e.response.status === 400) {
+                setError('Неправильный запрос')
+            } else if (e.response.status === 401) {
+                setError('Вы не авторизованы')
+            } else if (e.response.status === 403) {
+                setError('Нет прав на просмотр')
+            } else if (e.response.status === 404) {
+                setError('Связь с сервером установлена, но данных по заданному запросу на сервере нет')
+            } else {
+                setError('server is temporarily unavailable')
+            }
             showError('Ошибка запроса', 'Повторите попытку позже');
         } finally {
             setIsLoading(false)
@@ -83,13 +95,13 @@ const Currency = () => {
                         <Loading/>
                     </div>
 
-                        :
+                    :
 
-                            currencyData.map((item, idx) => (
-                    <div
-                        key={idx}
-                        className='table-h1'
-                    >
+                    currencyData.map((item, idx) => (
+                        <div
+                            key={idx}
+                            className='table-h1'
+                        >
 
                             <div className='table'>
                                 <span>{item.id}</span>
@@ -100,9 +112,13 @@ const Currency = () => {
                                 <span
                                     className='blue-span'>{item.rates[0]?.updated_at ? formatTime(item.rates[0].updated_at) : 'Нет данных...'}</span>
                             </div>
-                    </div>
-                            ))
+                        </div>
+                    ))
                 }
+
+                <div className="e-div">
+                    {error && <h1 className='error-h1'>{error}</h1>}
+                </div>
 
             </div>
 
